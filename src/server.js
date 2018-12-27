@@ -11,7 +11,7 @@ const createConnection = require("./connection");
 const { seedRigs, seedFleets, backfillFleetsWithRigs } = require("./seeder/seeder");
 
 const startServer = async () => {
-  const PORT = 3000;
+  const PORT = process.env.PORT || 3000;
   const app = express();
 
   app.use(cors());
