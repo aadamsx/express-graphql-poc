@@ -5,6 +5,15 @@ const Booking = require("../../models/bookings");
 const Rigs = require("../../models/rigs");
 const Fleet = require("../../models/fleet");
 
+const transformEvent = event => {
+  return {
+    ...event._doc,
+    _id: event._doc._id.toString(),
+    date: new Date(event._doc.date).toISOString(),
+    creator: user.bind(this, event.creator)
+  };
+}
+
 const singleFleet = async fleetId => {
   try {
     const fleet = await Fleet.findById(fleetId);
