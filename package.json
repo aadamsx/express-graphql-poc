@@ -5,6 +5,7 @@
   "main": "src/index.js",
   "license": "MIT",
   "scripts": {
+    "web": "node src/index.js",
     "start": "nodemon src/index.js"
   },
   "dependencies": {
@@ -19,6 +20,9 @@
   },
   "devDependencies": {
     "nodemon": "1.18.4"
+  },
+  "engines": {
+    "node": "10.x"
   },
   "keywords": []
 }
