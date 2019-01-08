@@ -3,7 +3,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 
 const graphqlSchema = require("../graphql/schema/index");
-const graphqlResolvers = require("../graphql/resolvers/index");
+const rootResolver = require("../graphql/resolvers/index");
 const graphqlHttp = require("express-graphql");
 
 const createConnection = require("./connection");
@@ -22,7 +22,7 @@ const startServer = async () => {
     "/graphql",
     graphqlHttp({
       schema: graphqlSchema,
-      rootValue: graphqlResolvers,
+      rootValue: rootResolver,
       graphiql: true
     })
   );
